@@ -22,4 +22,14 @@ class Library
     end
   end
 
+  def add_book(title)
+    @books.push({
+      title: title,
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+      })
+    end
+
   end
