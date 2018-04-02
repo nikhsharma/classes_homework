@@ -1,6 +1,6 @@
 class CodeclanStudent
 
-def initialize(name, cohort)
+def initialize(name, cohort, favourite_language)
 @name = name
 @cohort = cohort
 end
@@ -23,6 +23,10 @@ end
 
 def talk
   return "I can talk!"
+end
+
+def say_favourite_language(favourite_language)
+    return "I love #{favourite_language}!"
 end
 
 end
