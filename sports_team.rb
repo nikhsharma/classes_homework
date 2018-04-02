@@ -17,4 +17,9 @@ class SportsTeam
   def coach()
     return @coach
   end
+
+  def update_coach(coach)
+    @coach = coach
+  end
+
 end
