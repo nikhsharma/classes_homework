@@ -13,4 +13,8 @@ class SportsTeam
   def add_new_player(new_player)
     @players.push(new_player)
   end
+
+  def search_players(player)
+    @players.include? player
+  end
 end
