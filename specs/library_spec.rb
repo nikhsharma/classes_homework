@@ -58,4 +58,12 @@ def test_get_book
       @library.search_by_title("Book no. 2"))
     end
 
+    def test_return_rental_details
+      assert_equal(
+        { student_name: "Nik",
+            date: "02/11/17"
+          },
+        @library.return_rental_details("Book no. 2"))
+      end
+
   end
