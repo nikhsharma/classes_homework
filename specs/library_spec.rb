@@ -94,7 +94,7 @@ class TestLibrary < MiniTest::Test
           end
 
           def test_rent_to_student
-            @library.rent_to_student("Another Book", "Tom", "08/04/18")
+            @library.rent_to_student("Book no. 2", "Tom", "02/11/18")
             assert_equal([
               {
                 title: "Lord of the Rings",
@@ -106,15 +106,8 @@ class TestLibrary < MiniTest::Test
               {
                 title: "Book no. 2",
                 rental_details: {
-                  student_name: "Nik",
-                  date: "02/11/17"
-                }
-              },
-              {
-                title: "Another Book",
-                rental_details: {
                   student_name: "Tom",
-                  date: "08/04/18"
+                  date: "02/11/18"
                 }
               }
               ],

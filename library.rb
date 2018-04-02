@@ -33,12 +33,12 @@ class Library
     end
 
     def rent_to_student(title, name, date)
-search_by_title(title).push({
-  title: title,
-  rental_details: {
-  student_name: name,
-  date: date
-}})
-    end
+      search_by_title(title)[:rental_details] = {
+          student_name: name,
+          date: date
+          }
 
-  end
+
+        end
+
+      end
