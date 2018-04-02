@@ -6,26 +6,56 @@ class TestLibrary < MiniTest::Test
 
   def setup
     @library = Library.new(
+      [
       {
-        title: "lord_of_the_rings",
-        rental_details: {
-          student_name: "Jeff",
-          date: "01/12/16"
-        }
-      }
-    )
-  end
-
-  def test_book
-    assert_equal(
-      {
-        title: "lord_of_the_rings",
+        title: "Lord of the Rings",
         rental_details: {
           student_name: "Jeff",
           date: "01/12/16"
         }
       },
-      @library.book)
+      {
+        title: "Book no. 2",
+        rental_details: {
+          student_name: "Nik",
+          date: "02/11/17"
+        }
+      }
+    ]
+  )
+end
+
+def test_get_book
+  assert_equal(
+    [
+    {
+      title: "Lord of the Rings",
+      rental_details: {
+        student_name: "Jeff",
+        date: "01/12/16"
+      }
+    },
+    {
+      title: "Book no. 2",
+      rental_details: {
+        student_name: "Nik",
+        date: "02/11/17"
+      }
+    }
+  ],
+    @library.get_books)
   end
 
-end
+  def test_search_by_title
+    assert_equal(
+      {
+        title: "Book no. 2",
+        rental_details: {
+          student_name: "Nik",
+          date: "02/11/17"
+        }
+      },
+      @library.search_by_title("Book no. 2"))
+    end
+
+  end

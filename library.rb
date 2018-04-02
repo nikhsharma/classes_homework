@@ -1,12 +1,19 @@
 class Library
 
-def initialize(book)
-@book = book
-end
-
-
-  def book()
-    return @book
+  def initialize(books)
+    @books = books
   end
 
-end
+
+  def get_books()
+    return @books
+  end
+
+  def search_by_title(title)
+    for book in @books
+      return book if book[:title] == title
+    end
+  end
+
+
+  end
