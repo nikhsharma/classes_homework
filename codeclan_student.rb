@@ -21,4 +21,8 @@ def update_cohort(cohort)
   @cohort = cohort
 end
 
+def talk
+  return "I can talk!"
+end
+
 end

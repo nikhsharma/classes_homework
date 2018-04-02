@@ -26,4 +26,8 @@ def test_update_cohort
   assert_equal(6, @student.cohort)
 end
 
+def test_talking
+  assert_equal("I can talk!", @student.talk)
+end
+
 end
