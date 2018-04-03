@@ -1,25 +1,23 @@
 class Library
 
+
+  attr_reader :books
+
   def initialize(books)
     @books = books
-  end
-
-
-  def get_books()
-    return @books
   end
 
   def search_by_title(title)
     for book in @books
       return book if book[:title] == title
     end
+    return nil
   end
 
 
   def return_rental_details(title)
-    for book in @books
-      return book[:rental_details] if book[:title] == title
-    end
+    info = search_by_title(title)
+    return info[:rental_details] if info
   end
 
   def add_book(title)
@@ -33,8 +31,8 @@ class Library
     end
 
     def rent_to_student(title, name, date)
-          return_rental_details(title)[:student_name] = name
-          return_rental_details(title)[:date] = date
-        end
+      return_rental_details(title)[:student_name] = name
+      return_rental_details(title)[:date] = date
+    end
 
-      end
+  end

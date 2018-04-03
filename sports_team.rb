@@ -16,7 +16,7 @@ class SportsTeam
   end
 
   def search_players(player)
-    @players.include? player
+    return @players.include? player
   end
 
   def point_add_if_win(win)
